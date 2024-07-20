@@ -57,7 +57,9 @@ namespace Market.Model
 
         public List<CartItem> GetCartItems()
         {
-            return new List<CartItem>(cartItems);
+            if (cartItems != null)
+                return new List<CartItem>(cartItems);
+            else return cartItems = new List<CartItem>();
         }
 
         public int GetCountItem()
